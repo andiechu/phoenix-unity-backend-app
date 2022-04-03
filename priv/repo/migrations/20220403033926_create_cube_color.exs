@@ -6,7 +6,7 @@ defmodule BackendApp.Repo.Migrations.CreateCubeColor do
       add :cube_id, :serial, primary_key: true
       add :cube_color, :string
 
-      timestamps()
+      timestamps(type: utc_datetime)
     end
   end
 end

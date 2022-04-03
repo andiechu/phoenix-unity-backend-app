@@ -27,6 +27,17 @@ defmodule BackendAppWeb do
     end
   end
 
+  def service do
+    quote do
+      alias BackendApp.Repo
+      import Ecto
+      import Ecto.Query, only: [from: 1, from: 2]
+
+      alias BackendAppWeb.Time, as: TimeHelper
+      alias BackendAppWeb.String, as: StringHelper
+    end
+  end
+
   def view do
     quote do
       use Phoenix.View,
