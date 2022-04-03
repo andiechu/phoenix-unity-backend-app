@@ -1,0 +1,5 @@
+{
+    "all_cube_colors": "http://127.0.0.1:4000/api/all_cube_colors",
+    "cube_color": "http://127.0.0.1:4000/api/cube_color",
+    "event": "http://127.0.0.1:4000/api/event"
+}

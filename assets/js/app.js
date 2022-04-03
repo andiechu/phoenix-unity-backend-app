@@ -27,6 +27,5 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
-// ReactDOM.render(<ColorPage />, document.getElementById('app'));
 const root = createRoot(document.getElementById('app'));
 root.render(<ColorPage />)
