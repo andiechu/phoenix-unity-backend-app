@@ -1,0 +1,7 @@
+defmodule BackendAppWeb.PageController do
+  use BackendAppWeb, :controller
+
+  def index(conn, _params) do
+    render(conn, "index.html")
+  end
+end
