@@ -8,6 +8,7 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import ColorPage from './components/ColorPage';
+import socket, { channel } from './service/cube_socket';
 
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
@@ -28,4 +29,4 @@ liveSocket.connect()
 window.liveSocket = liveSocket
 
 const root = createRoot(document.getElementById('app'));
-root.render(<ColorPage />)
+root.render(<ColorPage channel={channel} />)   // TODO: quick and dirty hack, should put the socket in Redux instead

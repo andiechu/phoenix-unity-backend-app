@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import moment from 'moment';
 import axios from 'axios';
 
-
-const ColorPage = () => {
+const ColorPage = (props) => {
     const [cubeColors, setCubeColors] = useState([
         {
             cube_color: '#000000',
@@ -14,13 +13,14 @@ const ColorPage = () => {
     ]);
     const [selectedColor, selectColor] = useState(0);
     const [error, setError] = useState(undefined);
+    const [channel, setChannel] = useState(props.channel);
 
     useEffect(() => {
         console.log('component did mount')
 
-        axios.get('http://127.0.0.1:4000/api/all_cube_colors')    // TODO: use json config file, dev & prod env
+        axios.get('/api/all_cube_colors')    // TODO: use json config file, dev & prod env
             .then((resp) => {
-                console.log(resp)
+                // console.log(resp)
                 colors = resp.data.map((color, id) => ({
                     cube_color: color.cube_color,
                     cube_id: color.cube_id,
@@ -63,7 +63,8 @@ const ColorPage = () => {
                     e.preventDefault();
                     console.log(selectedColor)
                     // TODO: update through api
-                    axios.put()    // TODO: use json config file, dev & prod env
+                    channel.push('select_color', { cube_id: selectedColor })
+                    
                 }}
             >Submit</button>
         </form>
