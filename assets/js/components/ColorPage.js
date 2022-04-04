@@ -64,7 +64,6 @@ const ColorPage = (props) => {
                     console.log(selectedColor)
                     // TODO: update through api
                     channel.push('select_color', { cube_id: selectedColor })
-                    
                 }}
             >Submit</button>
         </form>

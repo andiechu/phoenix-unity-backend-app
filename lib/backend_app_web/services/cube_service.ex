@@ -7,4 +7,9 @@ defmodule BackendAppWeb.CubeService do
     Repo.all(CubeColor)
   end
 
+  def get_cube_color_by_id(cube_id) do
+    # query = from cube in CubeColor, where: cube.cube_id == ^cube_id
+    Repo.get(CubeColor, cube_id)
+  end
+
 end

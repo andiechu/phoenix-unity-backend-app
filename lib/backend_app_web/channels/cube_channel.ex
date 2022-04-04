@@ -1,6 +1,9 @@
 defmodule BackendAppWeb.CubeChannel do
   use Phoenix.Channel
 
+  alias BackendAppWeb.CubeService
+  alias BackendApp.CubeColor
+
   def join("cube:current_cube", _params, socket) do
     {:ok, socket}
   end
@@ -8,7 +11,11 @@ defmodule BackendAppWeb.CubeChannel do
   def handle_in("select_color", %{ "cube_id" => cube_id }, socket) do
     IO.puts("you have chose cube: #{cube_id}")
 
-    # TODO: broadcast another event to Unity frontend app
+    cube = cube_id
+      |> String.to_integer()
+      |> CubeService.get_cube_color_by_id()
+
+    broadcast(socket, "new_color", %{ cube_id: cube_id, cube_color: cube.cube_color })
 
     {:noreply, socket}
   end
