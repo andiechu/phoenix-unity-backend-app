@@ -2,7 +2,6 @@ defmodule BackendAppWeb.CubeChannel do
   use Phoenix.Channel
 
   alias BackendAppWeb.CubeService
-  alias BackendApp.CubeColor
 
   def join("cube:current_cube", _params, socket) do
     {:ok, socket}

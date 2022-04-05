@@ -61,8 +61,7 @@ const ColorPage = (props) => {
                 type="submit"
                 onClick={(e) => {
                     e.preventDefault();
-                    console.log(selectedColor)
-                    // TODO: update through api
+                    // console.log(selectedColor)
                     channel.push('select_color', { cube_id: selectedColor })
                 }}
             >Submit</button>

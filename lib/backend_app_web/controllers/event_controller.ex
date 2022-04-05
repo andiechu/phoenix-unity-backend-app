@@ -3,7 +3,7 @@ defmodule BackendAppWeb.EventController do
 
   def get_event(conn, _params) do
     # TODO: choose different event!
-    send_resp(conn, 200, "fuck you")
+    send_resp(conn, 200, "get event")
   end
 
 
