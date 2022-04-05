@@ -21,6 +21,7 @@ defmodule BackendAppWeb.CubeController do
   end
 
   def change_color(conn, _params) do
+    # TODO:
     send_resp(conn, 400, "")
   end
 
